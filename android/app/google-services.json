@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "388252650686",
+    "project_id": "notificationfirebase-67d2c",
+    "storage_bucket": "notificationfirebase-67d2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388252650686:android:45688b57a8d8e9e35662ef",
+        "android_client_info": {
+          "package_name": "com.maaz.test4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388252650686-v8q51npmlhk8ljvf79uvkrser2e71efs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_OcHbJA_2Aq6_TRsfA5Ubnhny9KvxpiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388252650686-v8q51npmlhk8ljvf79uvkrser2e71efs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
