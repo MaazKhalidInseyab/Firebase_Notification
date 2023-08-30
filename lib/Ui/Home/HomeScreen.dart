@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../profile/Profile.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -14,7 +18,11 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Center(
             child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [IconButton(onPressed: () {}, icon: Icon(Icons.notifications))],
+      children: [IconButton(onPressed: () {Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProfileScreen(),
+          ));}, icon: Icon(Icons.notifications))],
     )));
   }
 }
