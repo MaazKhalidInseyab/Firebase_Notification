@@ -26,14 +26,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   NotificationService notifier=NotificationService();
   @override
+
   void initState() {
-    // TODO: implement initState
     notifier.RequestNotificationPermission();
     notifier.GetDeviceToken().then((value) => debugPrint('Device Token: $value'));
-    notifier.firebaseInit(context);
-    super.initState();
 
-  }
+    super.initState();
+}
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//   }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

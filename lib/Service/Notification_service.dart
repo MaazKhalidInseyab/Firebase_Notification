@@ -1,5 +1,5 @@
 import 'dart:math';
-
+import 'package:rxdart/rxdart.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class NotificationService {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   final FlutterLocalNotificationsPlugin localNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
-
+ final onNotificationClick = BehaviorSubject<String>();
   void RequestNotificationPermission() async {
     NotificationSettings settings = await messaging.requestPermission(
       alert: true,
@@ -37,16 +37,16 @@ class NotificationService {
 
   void handleMessage(BuildContext context, RemoteMessage message) {
     print("This is handleMessage" + message.data['type']);
-    // if (message.data['type'] == 'home') {
-    // Navigator.push(
-    //     context,
-    //     MaterialPageRoute(
-    //       builder: (context) => ProfileScreen(),
-    //     ));
-    //  print("handle message ok");
-    //  } else {
-    //    print("else running");
-    //  }
+    if (message.data['type'] == 'home') {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProfileScreen(),
+        ));
+     print("handle message ok");
+     } else {
+       print("else running");
+     }
   }
 
   void initLocalNotifications(
@@ -59,11 +59,7 @@ class NotificationService {
 
     await localNotificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse: (payload) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProfileScreen(),
-          ));
+      handleMessage(context, message);
     });
   }
 
